@@ -52,16 +52,18 @@ export default defineConfig({
     vue(),
     // Font dự phòng có số đo (size-adjust, ascent…) khớp font web: khi font web tải xong và
     // thay vào, chữ không đổi kích thước nên trang không xô lệch (CLS). Tên "<font> fallback"
-    // được thêm vào biến --app-mono trong base.css (chữ thường dùng font hệ thống)
+    // được thêm vào các biến --app-body/--app-display/--app-mono trong base.css
     FontaineTransform.vite({
       fallbacks: {
+        'Be Vietnam Pro': ['Segoe UI', 'Helvetica Neue', 'Arial'],
+        'Bricolage Grotesque Variable': ['Segoe UI', 'Helvetica Neue', 'Arial'],
         'JetBrains Mono': ['Consolas', 'Menlo', 'Courier New'],
       },
       resolvePath: (id) => new URL(`./public${id}`, import.meta.url),
       // font biểu tượng không cần chữ dự phòng
       skipFontFaceGeneration: (name) => name.startsWith('primeicons'),
     }),
-    preloadFonts([/jetbrains-mono-latin-400-normal-[\w-]+\.woff2$/]),
+    preloadFonts([/be-vietnam-pro-latin-400-normal-[\w-]+\.woff2$/, /bricolage-grotesque-latin-wght-normal-[\w-]+\.woff2$/]),
     nonBlockingCss(),
   ],
   resolve: {

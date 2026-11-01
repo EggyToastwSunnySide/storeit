@@ -25,9 +25,9 @@ defineProps<{ label: string; hint?: string; for?: string; stacked?: boolean }>()
   padding: 0.65rem 1rem;
   box-sizing: border-box;
 }
-/* vạch ngăn thụt từ lề trái như danh sách của iOS */
+/* vạch ngăn giữa các dòng */
 .settings-row + .settings-row {
-  box-shadow: inset 1rem 1px 0 var(--app-panel), inset 0 1px 0 var(--app-hair);
+  border-top: 1px solid var(--app-line);
 }
 .settings-row.stacked {
   flex-direction: column;

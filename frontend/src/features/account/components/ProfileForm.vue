@@ -56,7 +56,7 @@ async function save() {
 
 <template>
   <form v-if="session.me" class="settings" @submit.prevent="save">
-    <!-- thẻ người dùng như đầu trang Settings của iOS -->
+    <!-- thẻ người dùng -->
     <div class="who">
       <Avatar :label="initials" shape="circle" size="xlarge" />
       <div class="who-text">
@@ -102,14 +102,13 @@ async function save() {
   gap: 1rem;
   padding: 1rem 1.1rem;
   margin-bottom: 1.6rem;
-  border: 1px solid var(--app-hair);
-  border-radius: 14px;
-  background: var(--app-panel);
-  box-shadow: var(--app-card-shadow);
+  border: 1px solid var(--app-line);
+  border-radius: 12px;
+  background: var(--p-content-background);
 }
 .who :deep(.p-avatar) {
-  background: linear-gradient(160deg, var(--app-brand), var(--app-brand-strong));
-  color: #fff;
+  background: var(--p-highlight-background);
+  color: var(--p-highlight-color);
   font-weight: 700;
 }
 .who-text {

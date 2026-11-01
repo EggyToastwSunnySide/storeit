@@ -167,7 +167,7 @@ function commitRename() {
   align-items: flex-end;
   gap: 0.25rem;
   min-width: 0;
-  padding: 0.4rem 0.5rem 0;
+  padding: 0.35rem 0.5rem 0;
   background: var(--app-soft);
   border-bottom: 1px solid var(--app-line);
 }
@@ -192,10 +192,10 @@ function commitRename() {
   max-width: 15rem;
   height: 2.3rem;
   box-sizing: border-box;
-  padding: 0 0.35rem 0 0.75rem;
+  padding: 0 0.35rem 0 0.7rem;
   border: 1px solid transparent;
   border-bottom: 0;
-  border-radius: 10px 10px 0 0;
+  border-radius: 7px 7px 0 0;
   background: transparent;
   color: var(--p-text-muted-color);
   font-weight: 500;
@@ -223,8 +223,8 @@ function commitRename() {
   margin-bottom: -1px;
 }
 .tab-icon {
-  font-size: 0.8rem;
-  opacity: 0.65;
+  font-size: 0.75rem;
+  opacity: 0.7;
 }
 .app-tab.pinned .tab-icon {
   color: var(--app-accent);

@@ -193,19 +193,17 @@ const model = computed(() => (nav.scopeTypeId.value ? scoped.value : workspace.v
   min-width: 0;
   padding: 0;
 }
-/* nhãn nhóm (Inventory, Borrowing, Setup, People) kiểu sidebar iOS: chữ đậm vừa, mờ, không in hoa */
+/* nhãn nhóm (Inventory, Borrowing, Setup, People) kiểu demo */
 .nav-menu :deep(.p-menu-submenu-label) {
-  font: 600 0.78rem var(--app-body);
-  letter-spacing: 0;
+  font: 500 0.66rem var(--app-mono);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
   color: var(--p-text-muted-color);
-  padding: 1.1rem 0.7rem 0.35rem;
+  padding: 1rem 0.6rem 0.3rem;
   background: transparent;
 }
 .nav-menu :deep(.p-menu-item-content) {
-  border-radius: 10px;
-}
-.nav-menu :deep(.p-menu-item + .p-menu-item) {
-  margin-top: 1px;
+  border-radius: 7px;
 }
 .back {
   padding: 0.25rem 0.6rem 0.6rem;
@@ -245,16 +243,13 @@ const model = computed(() => (nav.scopeTypeId.value ? scoped.value : workspace.v
   align-items: center;
   gap: 0.65rem;
   width: 100%;
-  min-height: 2.25rem;
-  box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: 7px;
   color: var(--p-text-color);
-  font-weight: 500;
   text-decoration: none;
 }
 .nav-icon {
   width: 1.15rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -271,7 +266,7 @@ const model = computed(() => (nav.scopeTypeId.value ? scoped.value : workspace.v
   padding-left: 0.85rem;
   width: calc(100% - 1.15rem);
   border-left: 1px solid var(--app-line);
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 7px 7px 0;
   padding-top: 0.35rem;
   padding-bottom: 0.35rem;
 }

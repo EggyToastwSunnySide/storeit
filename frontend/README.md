@@ -1,9 +1,11 @@
 # storeit frontend
 
 The StoreIt web app: identity, inventory and borrowing. Vue 3, TypeScript, PrimeVue 4 and
-Vue Query. The look is an iOS-style preset over PrimeVue's Aura theme (`src/app/theme.ts`) plus
-shared tokens and layout CSS (`src/app/base.css`): grey ground with a faint dot pattern, white
-cards, tinted tags, grey secondary buttons, one green accent.
+Vue Query. The look is PrimeVue's Aura theme with a small preset (`src/app/theme.ts`) plus shared
+tokens and layout CSS (`src/app/base.css`): bordered surfaces, solid coloured tags, one green accent,
+Be Vietnam Pro for text, Bricolage Grotesque for headings and JetBrains Mono for codes (all
+bundled). The layout (sidebar groups, detail page header with facts strip, section tabs, grouped
+Settings) is separate from the look: restyle through the tokens and the preset, not per page.
 
 ## Run
 
@@ -64,8 +66,8 @@ behaves the same everywhere.
 |---|---|
 | `PageHeader` | List page title, one-line subtitle, primary action (default slot) |
 | `DetailHeader` | Every detail page's header card: icon tile (or `#media` avatar), `code` chip above the title, `#tags`, `#actions`, and a `facts` strip of 3–4 label/value pairs (`HeaderFact`, optional `to` link) |
-| `CodeTag` | Every auto-generated code (asset tag `DSK-0022`, request `REQ-0004`, type code): grey mono chip, link colour inside a link. Use it in tables, cards and dialogs instead of styling codes per page |
-| `SettingsGroup`, `SettingsRow` | iOS Settings-style grouped lists (title, card of rows with hairlines, footer); a row is a label and hint on the left, a control on the right (`stacked` for wide inputs). Used by the Settings page |
+| `CodeTag` | Every auto-generated code (asset tag `DSK-0022`, request `REQ-0004`, type code): mono text, link colour inside a link. Use it in tables, cards and dialogs instead of styling codes per page |
+| `SettingsGroup`, `SettingsRow` | Grouped lists (title, bordered group of rows with dividers, footer); a row is a label and hint on the left, a control on the right (`stacked` for wide inputs). Used by the Settings page |
 | `CardGrid`, `EntityCard`, `AddCard` | Card grids (asset types, roles). `EntityCard` opens `to` on click/Enter, Ctrl/middle-click opens a new tab, emits `menu` on right-click; `AddCard` is the dashed "New …" tile and stretches to the row height |
 | `SegmentedFilter` | The only segmented control: list filters (with `count`), Cards/Table (`icon-only`), and detail-page section tabs (`class="section-tabs"`, options may carry `dirty` and `disabled`). The bold active label keeps its width |
 | `IconAction` | Every icon-only action: tooltip and `aria-label` from `label`, `danger`, `to` for real links, `disabled` + `reason` shows why in the tooltip |
@@ -176,7 +178,7 @@ Selection styling lives in `app/theme.ts` (token preset over Aura) and `app/base
 - **Lists:** `EmptyState` and `TableSkeleton` in every DataTable `#empty` slot.
 - **Colour:**
   - `--app-{brand,info,warn,danger,neutral}[-strong|-ink|-soft]` in `app/base.css`;
-  - tags are tinted (soft background, ink text) via `lib/tones.ts` and the tag preset in `app/theme.ts`;
+  - tags are solid via `lib/tones.ts` and the tag preset in `app/theme.ts`;
   - no coloured stripe on one side of anything.
 
 ## Detail pages and quick edit

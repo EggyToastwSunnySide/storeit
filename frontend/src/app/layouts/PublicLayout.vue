@@ -5,9 +5,9 @@ import landing from '@/assets/landing.jpg'
 
 <template>
   <!-- Trang công khai (đăng nhập, quên mật khẩu, đặt mật khẩu): bên trái thẻ ảnh lớn (kho hàng,
-       phủ tối ánh xanh) với logo và câu giới thiệu; bên phải form trên nền hoa văn.
+       phủ tối ánh xanh) với logo và câu giới thiệu; bên phải form.
        Màn hẹp: thẻ ảnh thành dải trên cùng chỉ có logo -->
-  <div class="public app-patterned">
+  <div class="public">
     <aside class="public-art" :style="{ '--landing': `url(${landing})` }">
       <AppLogo class="public-logo" />
       <div class="pitch">
@@ -32,6 +32,7 @@ import landing from '@/assets/landing.jpg'
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  background: var(--p-content-background);
 }
 /* thẻ ảnh: cách mép 14px, bo 28px; ảnh phủ tối từ trên xuống, ánh xanh brand ở góc dưới */
 .public-art {

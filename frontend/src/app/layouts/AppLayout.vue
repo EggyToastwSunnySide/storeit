@@ -177,7 +177,7 @@ onBeforeUnmount(() => {
     </SideDrawer>
     <div class="work">
       <TabBar @switch="switchTo" />
-      <main ref="content" class="content app-patterned">
+      <main ref="content" class="content">
         <!-- Mỗi tab giữ trang của nó (bộ lọc, cuộn, form đang nhập) khi chuyển tab -->
         <EmptyState v-if="!tabs.tabs.length" icon="pi pi-clone" text="No open tabs. Open a page from the sidebar or press Ctrl K." />
         <RouterView v-else v-slot="{ Component, route: r }">
@@ -294,6 +294,7 @@ onBeforeUnmount(() => {
   padding: 1.1rem 1.4rem 2.5rem;
   min-width: 0;
   overflow: auto;
+  background: var(--p-content-background);
 }
 @media (max-width: 760px) {
   /* sidebar ở trong ngăn kéo: chỉ còn thanh trên và phần làm việc */

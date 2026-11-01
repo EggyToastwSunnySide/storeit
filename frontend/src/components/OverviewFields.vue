@@ -125,7 +125,7 @@ const shown = (f: FieldDef) => {
   padding-block: 0.5rem;
 }
 .overview-fields:not(.stacked) > :nth-child(n + 3) {
-  border-top: 1px solid var(--app-hair);
+  border-top: 1px solid var(--app-line);
 }
 .overview-fields:not(.stacked) > :nth-child(-n + 2) {
   padding-top: 0;

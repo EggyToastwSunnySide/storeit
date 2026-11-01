@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// Nhóm cài đặt kiểu iOS Settings: tiêu đề nhỏ mờ phía trên, thẻ bo góc chứa các dòng
+// Nhóm cài đặt: tiêu đề nhỏ mờ phía trên, khung bo góc chứa các dòng
 // (SettingsRow, ngăn bằng vạch mảnh), chú thích nhỏ phía dưới
 defineProps<{ title?: string; footer?: string }>()
 </script>
@@ -25,10 +25,9 @@ defineProps<{ title?: string; footer?: string }>()
   color: var(--p-text-muted-color);
 }
 .group-card {
-  border: 1px solid var(--app-hair);
-  border-radius: 14px;
-  background: var(--app-panel);
-  box-shadow: var(--app-card-shadow);
+  border: 1px solid var(--app-line);
+  border-radius: 12px;
+  background: var(--p-content-background);
   overflow: hidden;
 }
 .group-footer {

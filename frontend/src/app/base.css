@@ -1,13 +1,12 @@
-/* Bố cục và định dạng chung. Bảng màu thống nhất (spec "Colour"), vật liệu kiểu hệ thống iOS
-   (lấy từ internship-cse: nền xám nhạt, thẻ trắng, ô nhập xám trong, đường kẻ mảnh, bóng mềm),
-   font hệ thống và JetBrains Mono; preset PrimeVue trong theme.ts lấy màu từ đây. */
+/* Bố cục và định dạng chung. Bảng màu thống nhất (spec "Colour") và font đóng gói
+   (Be Vietnam Pro, Bricolage Grotesque, JetBrains Mono); preset PrimeVue trong theme.ts
+   lấy màu từ đây. */
 
 :root {
   /* "<font> fallback": font dự phòng có số đo khớp (fontaine, vite.config.ts), giữ chữ không
      xô lệch khi font web tải xong */
-  /* font hệ thống như iOS/macOS (SF Pro), Windows dùng Segoe UI; đều có tiếng Việt */
-  --app-body: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, 'Segoe UI', sans-serif;
-  --app-display: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, 'Segoe UI', sans-serif;
+  --app-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque Variable fallback', 'Be Vietnam Pro', system-ui, sans-serif;
+  --app-body: 'Be Vietnam Pro', 'Be Vietnam Pro fallback', system-ui, 'Segoe UI', sans-serif;
   --app-mono: 'JetBrains Mono', 'JetBrains Mono fallback', ui-monospace, 'Cascadia Mono', Consolas, monospace;
   /* Mỗi vai trò bốn sắc: tươi (biểu tượng, bong bóng, tiến trình, thanh cuộn, focus), đậm
      (nền có chữ trắng: tag, nút đặc; tiêu đề màu), ink (chữ màu trên nền sáng), soft (hộp
@@ -37,47 +36,20 @@
   --app-row-hover: color-mix(in srgb, var(--app-brand) 8%, transparent);
   --app-scroll-thumb: color-mix(in srgb, var(--app-brand) 38%, transparent);
   --app-scroll-thumb-hover: color-mix(in srgb, var(--app-brand) 70%, transparent);
-  /* Vật liệu (iOS, sáng): nền dưới cùng, thẻ, nền phụ (hàng tiêu đề bảng), ô nhập xám trong,
-     đường kẻ mảnh, chữ mờ, rãnh công tắc, bóng của thẻ và lớp nổi */
-  --app-ground: #f2f2f7;
-  --app-panel: #ffffff;
-  --app-panel-2: #f7f7fa;
-  --app-fill: rgba(118, 118, 128, 0.12);
-  --app-line: rgba(60, 60, 67, 0.16);
-  --app-hair: rgba(0, 0, 0, 0.07);
-  --app-muted: rgba(60, 60, 67, 0.62);
-  --app-bar: rgba(120, 120, 128, 0.22);
-  --app-thumb: rgba(60, 60, 67, 0.3);
-  --app-card-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 30px rgba(0, 0, 0, 0.09);
-  /* ô đang chọn của điều khiển phân đoạn (segmented control) và bóng của nó */
-  --app-segment: #ffffff;
-  /* hoa văn nền: lưới chấm rất mờ trên nền xám (body, vùng nội dung, trang công khai) */
-  --app-pattern-dot: rgba(60, 60, 67, 0.13);
-  --app-segment-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.04), 0 3px 8px rgba(0, 0, 0, 0.12), 0 3px 1px rgba(0, 0, 0, 0.04);
-  --app-ease: cubic-bezier(0.32, 0.72, 0, 1);
-  /* nền phụ, màu nhấn, liên kết */
-  --app-soft: var(--app-fill);
+  /* nền dưới cùng (sau thanh trên, sidebar), màu nhấn, nền phụ */
+  --app-ground: var(--p-surface-50);
+  --app-soft: var(--p-surface-100);
+  --app-line: var(--p-content-border-color);
   --app-accent: var(--app-brand);
   --app-link: var(--app-brand-ink);
-  /* mục "đang ở đây" (sidebar, thẻ, dòng đang chọn): nền brand nhạt; rê chuột: xám trong */
+  /* mục "đang ở đây" (sidebar, thẻ, dòng đang chọn): nền brand nhạt; rê chuột: xám */
   --app-selected: var(--app-brand-soft);
-  --app-hover: var(--app-fill);
+  --app-hover: var(--p-surface-100);
 }
 :root.app-dark {
-  /* Vật liệu (iOS, tối) */
-  --app-ground: #0b0b0c;
-  --app-panel: #1c1c1e;
-  --app-panel-2: #232325;
-  --app-fill: rgba(118, 118, 128, 0.2);
-  --app-line: rgba(84, 84, 88, 0.55);
-  --app-hair: rgba(255, 255, 255, 0.09);
-  --app-muted: rgba(235, 235, 245, 0.6);
-  --app-bar: rgba(120, 120, 128, 0.36);
-  --app-thumb: rgba(235, 235, 245, 0.28);
-  --app-card-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.08) inset, 0 1px 0 rgba(255, 255, 255, 0.07) inset, 0 10px 30px rgba(0, 0, 0, 0.42), 0 2px 6px rgba(0, 0, 0, 0.3);
-  --app-segment: #636366;
-  --app-pattern-dot: rgba(235, 235, 245, 0.07);
-  --app-segment-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  --app-ground: var(--p-surface-950);
+  --app-soft: var(--p-surface-800);
+  --app-hover: var(--p-surface-800);
   --app-brand-ink: #34d399;
   --app-brand-soft: color-mix(in srgb, #10b981 20%, transparent);
   --app-info-ink: #38bdf8;
@@ -90,25 +62,25 @@
   --app-neutral-soft: color-mix(in srgb, #94a3b8 20%, transparent);
 }
 
-/* Thanh cuộn mảnh 5px kiểu iOS: không rãnh, nút xám, rê chuột thì màu brand. Chrome bỏ qua
-   ::-webkit-scrollbar khi có scrollbar-width/color, nên hai thuộc tính chuẩn chỉ dùng cho trình
-   duyệt không có ::-webkit-scrollbar (Firefox) */
+/* Thanh cuộn mảnh 6px, không rãnh, nút màu brand nhạt. Chrome bỏ qua ::-webkit-scrollbar
+   khi có scrollbar-width/color, nên hai thuộc tính chuẩn chỉ dùng cho trình duyệt không có
+   ::-webkit-scrollbar (Firefox) */
 @supports not selector(::-webkit-scrollbar) {
   * {
     scrollbar-width: thin;
-    scrollbar-color: var(--app-thumb) transparent;
+    scrollbar-color: var(--app-scroll-thumb) transparent;
   }
 }
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--app-thumb);
+  background: var(--app-scroll-thumb);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -127,20 +99,10 @@
   --p-datatable-body-cell-padding: 0.375rem 0.5rem;
 }
 
-/* nền có hoa văn: lưới chấm 22px cố định theo màn hình (các vùng cùng dùng thì chấm thẳng hàng) */
-body,
-.app-patterned {
-  background-color: var(--app-ground);
-  background-image: radial-gradient(var(--app-pattern-dot) 1px, transparent 1.3px);
-  background-size: 22px 22px;
-  background-attachment: fixed;
-}
 body {
   margin: 0;
-  font: 13.5px/1.45 var(--app-body);
-  letter-spacing: -0.006em;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font: 14px/1.45 var(--app-body);
+  background: var(--app-ground);
   color: var(--p-text-color);
 }
 h1,
@@ -148,7 +110,7 @@ h2,
 h3 {
   font-family: var(--app-display);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-wrap: balance;
   margin: 0;
 }
@@ -171,12 +133,13 @@ kbd,
   font-family: var(--app-mono);
 }
 kbd {
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  padding: 0 0.4rem;
+  padding: 0 0.35rem;
   border: 1px solid var(--app-line);
-  border-radius: 5px;
-  background: var(--app-fill);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  background: var(--app-soft);
   color: var(--p-text-muted-color);
 }
 :focus-visible {
@@ -271,13 +234,6 @@ kbd {
   font-size: 0.85rem;
   color: var(--p-text-muted-color);
 }
-/* nút cuối trang cài đặt (SettingsGroup): canh phải dưới nhóm cuối */
-.settings-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5rem;
-  margin-top: 1.1rem;
-}
 .actions {
   display: flex;
   gap: 0.5rem;
@@ -285,7 +241,7 @@ kbd {
   align-items: center;
 }
 /* Trang chi tiết (một kiểu cho mọi trang): các mục là thẻ (Panel) xếp lưới; trong thẻ là danh
-   sách nhãn / giá trị kiểu iOS, mỗi dòng ngăn bằng vạch mảnh (dl.props, OverviewFields) */
+   sách nhãn / giá trị, mỗi dòng ngăn bằng vạch mảnh (dl.props, OverviewFields) */
 .detail-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
@@ -304,7 +260,7 @@ dl.props > dd {
 }
 dl.props > dt:not(:first-of-type),
 dl.props > dt:not(:first-of-type) + dd {
-  border-top: 1px solid var(--app-hair);
+  border-top: 1px solid var(--app-line);
 }
 dl.props > dt:first-of-type,
 dl.props > dt:first-of-type + dd {
@@ -321,81 +277,28 @@ dl.props dd {
   margin: 0;
   overflow-wrap: anywhere;
 }
+/* nút cuối trang cài đặt (SettingsGroup): canh phải dưới nhóm cuối */
+.settings-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
 section + section {
   margin-top: 2rem;
 }
 
-/* Bảng: thẻ bo góc lớn nổi bằng bóng mềm, viền mảnh, hàng tiêu đề nền phụ, số thẳng cột */
+/* Bảng: khung bo góc, hàng tiêu đề nền phụ, số thẳng cột */
 .p-datatable {
-  border: 1px solid var(--app-hair);
-  border-radius: 16px;
+  border: 1px solid var(--app-line);
+  border-radius: 10px;
   overflow: hidden;
-  background: var(--app-panel);
-  box-shadow: var(--app-card-shadow);
   font-variant-numeric: tabular-nums;
 }
 .p-datatable .p-datatable-thead > tr > th {
-  background: var(--app-panel-2);
-  font-size: 0.78rem;
-  font-weight: 600;
+  background: var(--app-soft);
+  font-size: 0.8rem;
   color: var(--p-text-muted-color);
-}
-/* Thẻ (Panel): nổi trên nền xám như thẻ của iOS, tiêu đề đậm */
-.p-panel {
-  border-color: var(--app-hair);
-  box-shadow: var(--app-card-shadow);
-}
-.p-panel .p-panel-title {
-  font: 600 0.95rem var(--app-display);
-  letter-spacing: -0.01em;
-}
-
-/* Nút kiểu iOS: chữ đậm vừa; nút phụ (secondary outlined) là nút "xám" nền xám trong, không viền */
-.p-button {
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.p-button.p-button-secondary.p-button-outlined {
-  background: var(--app-fill);
-  border-color: transparent;
-  color: var(--p-text-color);
-}
-.p-button.p-button-secondary.p-button-outlined:not(:disabled):hover {
-  background: var(--app-bar);
-  border-color: transparent;
-  color: var(--p-text-color);
-}
-.p-button.p-button-danger.p-button-outlined {
-  background: var(--app-danger-soft);
-  border-color: transparent;
-}
-/* phím tắt trong nút (KeyHint): viên mờ theo màu chữ của nút */
-.p-button kbd {
-  border-color: transparent;
-  background: color-mix(in srgb, currentColor 16%, transparent);
-  color: inherit;
-  opacity: 0.85;
-}
-
-/* Điều khiển phân đoạn duy nhất (SegmentedFilter trên SelectButton): bộ lọc của danh sách và tab
-   chia mục của trang chi tiết. Rãnh xám bo 11px đệm 3px, các lựa chọn cách 2px, viên đang bật bo
-   8px chữ đậm (kích thước ở theme.ts; SegmentedFilter giữ chỗ cho chữ đậm nên không đổi cỡ) */
-.p-selectbutton {
-  gap: 2px;
-  padding: 3px;
-  background: var(--app-fill);
-  border-radius: 11px;
-}
-.p-selectbutton .p-togglebutton {
-  background: transparent;
-  border-radius: 8px;
-}
-.p-togglebutton.p-togglebutton-checked {
-  font-weight: 600;
-}
-/* tab chia mục của trang chi tiết (SegmentedFilter class="section-tabs"): cách nội dung bên dưới */
-.p-selectbutton.section-tabs {
-  margin-bottom: 1rem;
 }
 /* Mỗi dòng của bảng nằm trên một dòng chữ: ô không xuống dòng; bảng rộng hơn chỗ thì cuộn
    ngang trong khung (khung ngoài giữ bo góc). Bảng table-layout: fixed (làn trạng thái, cột
@@ -493,21 +396,25 @@ section + section {
 .p-datatable .p-datatable-tbody > tr.p-datatable-row-selected > td.row-menu-col {
   background: linear-gradient(var(--app-selected), var(--app-selected)), var(--p-datatable-row-background, var(--p-content-background));
 }
-/* Liên kết là một mã tự sinh (CodeTag): không gạch chân, viên đậm lên khi rê chuột */
-a:has(> .code-tag) {
+/* Mã tài sản (tag): chữ mono, màu liên kết */
+.tag-cell,
+.tag-cell a {
+  font-family: var(--app-mono);
+  color: var(--app-link);
   text-decoration: none;
 }
-a:hover > .code-tag {
-  background: var(--app-brand-soft);
+/* SegmentedFilter làm tab chia mục của trang chi tiết (class="section-tabs"): cách nội dung bên dưới */
+.p-selectbutton.section-tabs {
+  margin-bottom: 1rem;
 }
-/* Tag: không xuống dòng; trong bảng cùng bề rộng, chữ ở giữa (cột trạng thái thẳng hàng),
-   nhãn dài hơn bề rộng chung thì tag dài ra thay vì bị cắt */
+/* Tag: không xuống dòng, chữ ở giữa; trong bảng cùng bề rộng (cột trạng thái thẳng hàng), nhãn
+   dài hơn bề rộng chung thì tag dài ra thay vì bị cắt. Ngoài bảng (đầu trang chi tiết) tag ôm chữ */
 .p-tag {
   justify-content: center;
   white-space: nowrap;
 }
 .p-datatable .p-tag {
-  min-width: 6.5rem;
+  min-width: 7.5rem;
 }
 .p-chip {
   font-size: 0.85rem;
@@ -531,4 +438,9 @@ a:hover > .code-tag {
 .p-select-option-selected:not(.p-disabled):hover,
 .p-listbox-option-selected:not(.p-disabled):hover {
   background: var(--app-hover);
+}
+
+/* Liên kết là một mã tự sinh (CodeTag): không gạch chân */
+a:has(> .code-tag) {
+  text-decoration: none;
 }

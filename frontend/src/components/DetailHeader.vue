@@ -44,12 +44,11 @@ defineProps<{ title: string; icon?: IconName; code?: string; facts?: HeaderFact[
 
 <style scoped>
 .detail-header {
-  padding: 1.1rem 1.25rem;
-  margin-bottom: 1.1rem;
-  border: 1px solid var(--app-hair);
-  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--app-line);
+  border-radius: 12px;
   background: var(--p-content-background);
-  box-shadow: var(--app-card-shadow);
 }
 .detail-top {
   display: flex;
@@ -62,11 +61,10 @@ defineProps<{ title: string; icon?: IconName; code?: string; facts?: HeaderFact[
   place-items: center;
   width: 2.9rem;
   height: 2.9rem;
-  border-radius: 13px;
-  background: linear-gradient(160deg, var(--app-brand), var(--app-brand-strong));
-  color: #fff;
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--app-brand) 35%, transparent);
-  font-size: 1.4rem;
+  border-radius: 12px;
+  background: var(--app-brand-soft);
+  color: var(--app-brand-strong);
+  font-size: 1.5rem;
   flex: none;
 }
 .detail-main {
@@ -92,12 +90,12 @@ defineProps<{ title: string; icon?: IconName; code?: string; facts?: HeaderFact[
   gap: 0.75rem 0;
   margin: 1rem 0 0;
   padding-top: 0.9rem;
-  border-top: 1px solid var(--app-hair);
+  border-top: 1px solid var(--app-line);
 }
 .fact {
   min-width: 0;
   padding: 0 1rem;
-  border-left: 1px solid var(--app-hair);
+  border-left: 1px solid var(--app-line);
 }
 .fact:first-child {
   padding-left: 0;
